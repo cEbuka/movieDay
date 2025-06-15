@@ -8,7 +8,7 @@ const Categories = () => {
             <section className='flex flex-col'>
                 <h2>Trending Now</h2>
                 <div className='grid grid-cols-4 gap-2'>
-                    <img width="100px" height="100px" />
+                    <img className="w-full h-[100px] md:h-[200px]"/>
                     <img width="100px" height="100px" />
                     <img width="100px" height="100px" />
                     <img width="100px" height="100px" />
