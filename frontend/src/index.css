@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+img, video {
+    max-width: 100%;
+    height: auto
+}
+body {
+    overflow-x: hidden;
+}
+@import "tailwindcss";
+
+@theme {
+  --color-secondary: #7df9ff;
+  --color-primary: #121212;
+}
