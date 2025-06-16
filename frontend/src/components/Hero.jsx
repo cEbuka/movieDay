@@ -13,7 +13,7 @@ const Hero = () => {
                 </p>
                 <button className='outline-1 md:p-4'>Watch Trailer</button>
             </article>
-            <img width="200px" height="200px" className='md:w-4/5 md:h-[400px]'/>
+            '<iframe width="100%"></iframe>
         </section>
     </Fragment>
   )

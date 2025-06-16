@@ -7,11 +7,9 @@ import Footer from '../components/Footer'
 const Home = () => {
   return (
     <Fragment>
-      <div className='grid min-h-screen'>
-        <NavBar />
+      <div>
         <Hero />
         <Categories />
-        <Footer />
       </div>
     </Fragment>
 
