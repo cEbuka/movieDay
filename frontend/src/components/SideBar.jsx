@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { FiCrosshair } from 'react-icons/fi'
 import Button from './Button'
 import useSideBarStore from '../state/useSideBarStore'
+import { Link } from 'react-router-dom'
 
 const SideBar = () => {
     const { toggleSideBar, isSideBarOpen, closeSideBar } = useSideBarStore();
@@ -25,16 +26,19 @@ const SideBar = () => {
     }, [isSideBarOpen, closeSideBar])
 
     return (
-        <div className='md:hidden w-2/3 h-auto absolute bg-primary text-white right-0 top-8 flex justify-between p-2 translate-x-0'>
+        <>  <div className='md:hidden w-2/3 h-auto absolute bg-primary text-white right-0 top-8 flex justify-between p-2 translate-x-0'>
             <ul className="grid gap-y-4">
                 <li>Home</li>
                 <li>Explore</li>
                 <li>Genres</li>
                 <li>Top Rated</li>
+                <Link to='/signup'>Sign in</Link>
             </ul>
             <Button onClick={toggleSideBar} className="self-start"><FiCrosshair /></Button>
         </div>
-    )
+
+        </>)
+
 }
 
 export default SideBar

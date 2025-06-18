@@ -1,4 +1,4 @@
-import { axios } from 'axios'
+import axios from 'axios'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
@@ -24,11 +24,11 @@ const useFetch = (url) => {
 
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         fetchData(url)
     }, [url])
 
-    return {data, loading, error}
+    return { data, loading, error }
 }
 
 export default useFetch

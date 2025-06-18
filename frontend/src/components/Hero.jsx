@@ -1,6 +1,9 @@
 import { Fragment } from 'react'
+import useFetch from '../hooks/useFetch'
 
 const Hero = () => {
+const {data: src} = useFetch()
+
   return (
     <Fragment>
         <section className='flex gap-2 items-center justify-center p-4 bg-primary/80 text-white'>
