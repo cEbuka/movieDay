@@ -15,3 +15,11 @@ body {
   --color-secondary: #7df9ff;
   --color-primary: #121212;
 }
+
+.signup > form>input {
+  width: 500px;
+  display: grid;
+  outline: 1px solid #000;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
