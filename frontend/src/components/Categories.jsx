@@ -1,18 +1,23 @@
 import { FiArrowRight } from "react-icons/fi"
 import Button from "./Button"
+import useFetch from "../hooks/useFetch"
 
 
 const Categories = () => {
+
+    const { data: movies } = useFetch("http://localhost:3000/movies")
     return (
         <main className='grid p-4'>
             <section className='flex flex-col'>
                 <h2>Trending Now</h2>
-                <div className='grid grid-cols-4 gap-2'>
-                    <img className="w-full h-[100px] md:h-[200px]"/>
-                    <img width="100px" height="100px" />
-                    <img width="100px" height="100px" />
-                    <img width="100px" height="100px" />
-                </div>
+
+                {movies?.map((movie) => (
+                    <div className='grid grid-cols-4 gap-2' key={movie.id}>
+                        {movie.title}
+                    </div>
+                ))}
+
+
                 <Button className='self-end'><FiArrowRight /></Button>
             </section>
             <section className="flex flex-col">
