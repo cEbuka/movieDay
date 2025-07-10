@@ -15,14 +15,13 @@ export const getMovies = async (req, res) => {
 
 export const getMovie = async (req, res) => {
     const { id } = req.params;
-    console.log(id)
 
     const options = {
         method: 'GET',
-        url: `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+        url: `${BASE_URL}/movie/${id}?language=en-US`,
         headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGRhMzEzODk4YzExMTkwNjg1NjAzMTY0MzViZjFlMiIsIm5iZiI6MTY5NDY4OTY3Ni4yNTYsInN1YiI6IjY1MDJlOThjZWZlYTdhMDExYWI5MzBhMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.siuW9ts7pCq6NtEdI7T6YXIbFsBN2rlJjTeI9skFXdQ'
+            Authorization: `Bearer ${process.env.TMDB_BEARER}`
         }
     };
 
@@ -30,6 +29,28 @@ export const getMovie = async (req, res) => {
         .request(options)
         .then(response =>
             res.json(response.data)
+        )
+        .catch(err => console.error(err));
+
+}
+
+export const getTopRatedMovies = async (req, res) => {
+
+    const options = {
+        method: 'GET',
+        url: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${process.env.TMDB_BEARER}`
+        }
+    };
+
+    axios
+        .request(options)
+        .then(response => {
+            res.json(response.data)
+            console.log(response.data)
+        }
         )
         .catch(err => console.error(err));
 
